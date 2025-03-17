@@ -5,9 +5,14 @@ import random
 import os
 
 # File Paths
-affirmations_file = "data/affirmations.json"
-user_data_file = "data/user_data.csv"
+data_dir = "data"
+affirmations_file = os.path.join(data_dir, "affirmations.json")
+user_data_file = os.path.join(data_dir, "user_data.csv")
 css_file = "style/style.css"  # Ensure correct path
+
+# Ensure "data" directory exists
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)  # Create the directory if it doesn't exist
 
 # Load affirmations
 if os.path.exists(affirmations_file):
